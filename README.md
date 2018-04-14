@@ -1,3 +1,6 @@
+
+注意按照 第三步：界面操作生成、写入骨架页面 来操作
+
 <p align="center">
 <img src="https://github.com/ElemeFE/page-skeleton-webpack-plugin/raw/master/docs/banner.jpg" alt="mark text" width="100%">
 </p>
@@ -100,7 +103,7 @@ Page Skeleton 是一款 webpack 插件，在开发过程中，通过简单的点
 通过 npm 来安装插件及依赖，该插件依赖于 [html-webpack-plugin](https://github.com/jantimon/html-webpack-plugin)。
 
 > npm install --save-dev page-skeleton-webpack-plugin
-> 
+>
 > npm install --save-dev html-webpack-plugin
 
 ### Basic Use
@@ -321,7 +324,7 @@ const pluginDefaultConfig = {
   },
   button: {
     color: '#EFEFEF',
-    excludes: [] 
+    excludes: []
   },
   svg: {
     color: '#EFEFEF',
@@ -355,7 +358,7 @@ const pluginDefaultConfig = {
 
 **问题一：pageSkeletonWebpackPlugin 的实现原理？**
 
-插件通过 Chrome headless 在服务端打开你所开发的页面，通过对页面中元素进行增减，以及对元素样式进行修改，生成骨架页面。这一过程，也就是上图的演示过程。生成骨架页面，然后保存到配置路径，文件命名为 `shell.html` ，在重新通过 webpack 打包的过程中，插件读取 `shell.html` 文件，并通过文件内容替换`<!-- shell.html -->`
+插件通过 Chrome headless 在服务端打开你所开发的页面，通过对页面中元素进行增减，以及对元素样式进行修改，生成骨架页面。这一过程，也就是上图的演示过程。生成骨架页面，然后保存到配置路径，文件命名为 `shell.html` ，在重新通过 webpack 打包的过程中，插件读取 `shell.html` 文件，并通过文件内容替换`<!-- shell -->`
 
 **问题二：项目中必须使用 DefinePlugin 吗？**
 

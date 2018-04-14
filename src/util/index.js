@@ -4,6 +4,7 @@ const { promisify } = require('util')
 const fs = require('fs')
 const os = require('os')
 const path = require('path')
+// const devip = require('dev-ip')
 const fse = require('fs-extra')
 const weblog = require('webpack-log')
 const QRCode = require('qrcode')
@@ -155,6 +156,11 @@ const generateQR = async (text) => {
   }
 }
 
+// const getLocalIpAddress = () => {
+//   const host = devip()[0]
+//   console.log(host)
+//   return host
+// }
 const getLocalIpAddress = () => {
   const interfaces = os.networkInterfaces()
   for (const devName in interfaces) { // eslint-disable-line guard-for-in
